@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -107,7 +115,7 @@
                 <a href="../00-DevelopmentInDynamo/00-Introduction.html">
             
                     
-                    0 - Development in Dynamo
+                    Development in Dynamo
             
                 </a>
             
@@ -138,25 +146,6 @@
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../02-PythonScript/01-DynamoInteraction.html">
-            
-                <a href="../02-PythonScript/01-DynamoInteraction.html">
-            
-                    
-                    2.1 - Interaction with Dynamo
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -328,6 +317,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="../05-Extension/00-Introduction.html">
+            
+                <a href="../05-Extension/00-Introduction.html">
+            
+                    
+                    5 - Extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-Extension/01-ExtensionAnatomy.html">
+            
+                <a href="../05-Extension/01-ExtensionAnatomy.html">
+            
+                    
+                    5.1 - Anatomy of an Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-Extension/02-ExtensionSetup.html">
+            
+                <a href="../05-Extension/02-ExtensionSetup.html">
+            
+                    
+                    5.2 - Extension Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../05-Extension/03-WPF_And_MVVM.html">
+            
+                <a href="../05-Extension/03-WPF_And_MVVM.html">
+            
+                    
+                    5.3 - WPF and MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../05-Extension/04-Events.html">
+            
+                <a href="../05-Extension/04-Events.html">
+            
+                    
+                    5.4 - Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../05-Extension/05-NodeViewCollector.html">
+            
+                <a href="../05-Extension/05-NodeViewCollector.html">
+            
+                    
+                    5.5 - NodeView Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -373,7 +446,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="3---explicit-node-functions">3 - Explicit Node Functions<!-- omit in toc --></h1>
+                                <h1 id="43---explicit-node-functions">4.3 - Explicit Node Functions<!-- omit in toc --></h1>
 <p>In this final part we are going to add more bindings to the UI, add an output port, and have our node return something. </p>
 <ul>
 <li><a href="#more-bindings">More bindings</a></li>
@@ -385,14 +458,14 @@
 </ul>
 <h2 id="more-bindings">More bindings</h2>
 <p>Add the following fields and properties to <code>HelloUI.cs</code>:</p>
-<pre><code class="lang-c#">    private int _sliderValueA;
-    private int _sliderValueR;
-    private int _sliderValueB;
-    private int _sliderValueG;
-    public int SliderValueA { get =&gt; _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged(&quot;SliderValueA&quot;); }}
-    public int SliderValueR { get =&gt; _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged(&quot;SliderValueR&quot;); } }
-    public int SliderValueB { get =&gt; _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged(&quot;SliderValueB&quot;); }}
-    public int SliderValueG { get =&gt; _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged(&quot;SliderValueG&quot;); } }
+<pre><code class="lang-csharp">    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueA;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueR;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueB;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueG;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); } }
 </code></pre>
 <p>If you debug your code now you&apos;ll see the binding to the UI sliders.</p>
 <h2 id="executing-functions">Executing functions</h2>
@@ -400,17 +473,17 @@
 <p><img src="assets/1531853891415.png" alt="1531853891415"></p>
 <p>Then let&apos;s add the <code>DynamoVisualProgramming.DynamoServices</code> NuGet package and the <code>System.Drawing</code> reference.</p>
 <p>Then create a new static class named <code>Functions.cs</code>:</p>
-<pre><code class="lang-c#">using Autodesk.DesignScript.Runtime;
-using System.Drawing;
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> Autodesk.DesignScript.Runtime;
+<span class="hljs-keyword">using</span> System.Drawing;
 
-namespace DynamoWorkshop.ExplicitNode.Functions
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ExplicitNode.Functions</span>
 {
-  [IsVisibleInDynamoLibrary(false)]
-  public static class Functions
+  [IsVisibleInDynamoLibrary(<span class="hljs-keyword">false</span>)]
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Functions</span>
   {
-    public static DSCore.Color ColorByARGB(int a, int r, int g, int b)
-    {
-      return DSCore.Color.ByARGB(a, r, g, b);
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> DSCore.<span class="hljs-function">Color <span class="hljs-title">ColorByARGB</span>(<span class="hljs-params"><span class="hljs-keyword">int</span> a, <span class="hljs-keyword">int</span> r, <span class="hljs-keyword">int</span> g, <span class="hljs-keyword">int</span> b</span>)
+    </span>{
+      <span class="hljs-keyword">return</span> DSCore.Color.ByARGB(a, r, g, b);
     }
   }
 }
@@ -420,79 +493,79 @@ namespace DynamoWorkshop.ExplicitNode.Functions
 <p><img src="assets/1531854050057.png" alt="1531854050057"></p>
 <p><img src="assets/1531854008439.png" alt="1531854008439"></p>
 <p>Then add the <code>BuildOutputAst</code> function to HelloUI.cs:</p>
-<pre><code class="lang-c#">    public override IEnumerable&lt;AssociativeNode&gt; BuildOutputAst(List&lt;AssociativeNode&gt; inputAstNodes)
-    {
-      var sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
-      var sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
-      var sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
-      var sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+<pre><code class="lang-csharp">    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> IEnumerable&lt;AssociativeNode&gt; <span class="hljs-title">BuildOutputAst</span>(<span class="hljs-params">List&lt;AssociativeNode&gt; inputAstNodes</span>)
+    </span>{
+      <span class="hljs-keyword">var</span> sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      <span class="hljs-keyword">var</span> sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      <span class="hljs-keyword">var</span> sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      <span class="hljs-keyword">var</span> sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
 
-      var functionCall =
+      <span class="hljs-keyword">var</span> functionCall =
         AstFactory.BuildFunctionCall(
-          new Func&lt;int, int, int, int, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
-          new List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
+          <span class="hljs-keyword">new</span> Func&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
+          <span class="hljs-keyword">new</span> List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
-      return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(<span class="hljs-number">0</span>), functionCall) };
     }
 </code></pre>
 <p>And the <code>OutPort</code> attributes on the node:</p>
-<pre><code class="lang-c#">  [OutPortNames(&quot;Color&quot;)]
-  [OutPortTypes(&quot;color&quot;)]
-  [OutPortDescriptions(&quot;Selected Color&quot;)]
+<pre><code class="lang-csharp">  [OutPortNames(<span class="hljs-string">&quot;Color&quot;</span>)]
+  [OutPortTypes(<span class="hljs-string">&quot;color&quot;</span>)]
+  [OutPortDescriptions(<span class="hljs-string">&quot;Selected Color&quot;</span>)]
 </code></pre>
 <p>Your <code>HelloUI.cs</code> should look like this:</p>
-<pre><code class="lang-c#">using System;
-using System.Collections.Generic;
-using System.Linq;
-/* dynamo directives */
-using Dynamo.Graph.Nodes;
-using Newtonsoft.Json;
-using ProtoCore.AST.AssociativeAST;
+<pre><code class="lang-csharp"><span class="hljs-keyword">using</span> System;
+<span class="hljs-keyword">using</span> System.Collections.Generic;
+<span class="hljs-keyword">using</span> System.Linq;
+<span class="hljs-comment">/* dynamo directives */</span>
+<span class="hljs-keyword">using</span> Dynamo.Graph.Nodes;
+<span class="hljs-keyword">using</span> Newtonsoft.Json;
+<span class="hljs-keyword">using</span> ProtoCore.AST.AssociativeAST;
 
-namespace DynamoWorkshop.ExplicitNode
+<span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ExplicitNode</span>
 {
-  [NodeName(&quot;HelloUI&quot;)]
-  [NodeDescription(&quot;Sample Explicit Node&quot;)]
-  [NodeCategory(&quot;DynamoWorkshop.Explicit Node&quot;)]
-  [OutPortNames(&quot;Color&quot;)]
-  [OutPortTypes(&quot;color&quot;)]
-  [OutPortDescriptions(&quot;Selected Color&quot;)]
+  [NodeName(<span class="hljs-string">&quot;HelloUI&quot;</span>)]
+  [NodeDescription(<span class="hljs-string">&quot;Sample Explicit Node&quot;</span>)]
+  [NodeCategory(<span class="hljs-string">&quot;DynamoWorkshop.Explicit Node&quot;</span>)]
+  [OutPortNames(<span class="hljs-string">&quot;Color&quot;</span>)]
+  [OutPortTypes(<span class="hljs-string">&quot;color&quot;</span>)]
+  [OutPortDescriptions(<span class="hljs-string">&quot;Selected Color&quot;</span>)]
   [IsDesignScriptCompatible]
-  public class HelloUI : NodeModel
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HelloUI</span> : <span class="hljs-title">NodeModel</span>
   {
-    //Json Constructor for Dynamo 2.0 nodes
+    <span class="hljs-comment">//Json Constructor for Dynamo 2.0 nodes</span>
     [JsonConstructor]
-    private HelloUI(IEnumerable&lt;PortModel&gt; inPorts, IEnumerable&lt;PortModel&gt; outPorts) : base(inPorts, outPorts)
-    {
+    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params">IEnumerable&lt;PortModel&gt; inPorts, IEnumerable&lt;PortModel&gt; outPorts</span>) : <span class="hljs-title">base</span>(<span class="hljs-params">inPorts, outPorts</span>)
+    </span>{
     }
 
-    public HelloUI()
-    {
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">HelloUI</span>(<span class="hljs-params"></span>)
+    </span>{
       RegisterAllPorts();
     }
 
-    private int _sliderValueA;
-    private int _sliderValueR;
-    private int _sliderValueB;
-    private int _sliderValueG;
-    public int SliderValueA { get =&gt; _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged(&quot;SliderValueA&quot;); }}
-    public int SliderValueR { get =&gt; _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged(&quot;SliderValueR&quot;); } }
-    public int SliderValueB { get =&gt; _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged(&quot;SliderValueB&quot;); }}
-    public int SliderValueG { get =&gt; _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged(&quot;SliderValueG&quot;); } }
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueA;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueR;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueB;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> _sliderValueG;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); } }
 
-    public override IEnumerable&lt;AssociativeNode&gt; BuildOutputAst(List&lt;AssociativeNode&gt; inputAstNodes)
-    {
-      var sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
-      var sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
-      var sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
-      var sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">override</span> IEnumerable&lt;AssociativeNode&gt; <span class="hljs-title">BuildOutputAst</span>(<span class="hljs-params">List&lt;AssociativeNode&gt; inputAstNodes</span>)
+    </span>{
+      <span class="hljs-keyword">var</span> sliderValueA = AstFactory.BuildDoubleNode(SliderValueA);
+      <span class="hljs-keyword">var</span> sliderValueR = AstFactory.BuildDoubleNode(SliderValueR);
+      <span class="hljs-keyword">var</span> sliderValueG = AstFactory.BuildDoubleNode(SliderValueG);
+      <span class="hljs-keyword">var</span> sliderValueB = AstFactory.BuildDoubleNode(SliderValueB);
 
-      var functionCall =
+      <span class="hljs-keyword">var</span> functionCall =
         AstFactory.BuildFunctionCall(
-          new Func&lt;int, int, int, int, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
-          new List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
+          <span class="hljs-keyword">new</span> Func&lt;<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>, DSCore.Color&gt;(Functions.Functions.ColorByARGB),
+          <span class="hljs-keyword">new</span> List&lt;AssociativeNode&gt; { sliderValueA, sliderValueR, sliderValueG, sliderValueB });
 
-      return new[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(0), functionCall) };
+      <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span>[] { AstFactory.BuildAssignment(GetAstIdentifierForOutputIndex(<span class="hljs-number">0</span>), functionCall) };
     }
   }
 }
@@ -507,28 +580,28 @@ namespace DynamoWorkshop.ExplicitNode
 <p><img src="assets/1531854428895.png" alt="1531854428895"></p>
 <h2 id="expiring-the-node">Expiring the node</h2>
 <p>Fortunately enough, expiring the node is easy. Just call <code>OnNodeModified()</code> to do so. In our case we&apos;ll add that to the setter methods of each or our SliderValues:</p>
-<pre><code class="lang-c#">    public int SliderValueA { get =&gt; _sliderValueA;  set { _sliderValueA = value; RaisePropertyChanged(&quot;SliderValueA&quot;); OnNodeModified(); }}
-    public int SliderValueR { get =&gt; _sliderValueR;  set { _sliderValueR = value; RaisePropertyChanged(&quot;SliderValueR&quot;); OnNodeModified(); } }
-    public int SliderValueB { get =&gt; _sliderValueB;  set { _sliderValueB = value; RaisePropertyChanged(&quot;SliderValueB&quot;); OnNodeModified(); } }
-    public int SliderValueG { get =&gt; _sliderValueG;  set { _sliderValueG = value; RaisePropertyChanged(&quot;SliderValueG&quot;); OnNodeModified(); } }
+<pre><code class="lang-csharp">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueA { <span class="hljs-keyword">get</span> =&gt; _sliderValueA;  <span class="hljs-keyword">set</span> { _sliderValueA = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueA&quot;</span>); OnNodeModified(); }}
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueR { <span class="hljs-keyword">get</span> =&gt; _sliderValueR;  <span class="hljs-keyword">set</span> { _sliderValueR = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueR&quot;</span>); OnNodeModified(); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueB { <span class="hljs-keyword">get</span> =&gt; _sliderValueB;  <span class="hljs-keyword">set</span> { _sliderValueB = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueB&quot;</span>); OnNodeModified(); } }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> SliderValueG { <span class="hljs-keyword">get</span> =&gt; _sliderValueG;  <span class="hljs-keyword">set</span> { _sliderValueG = <span class="hljs-keyword">value</span>; RaisePropertyChanged(<span class="hljs-string">&quot;SliderValueG&quot;</span>); OnNodeModified(); } }
 </code></pre>
 <p>It could be cleaner, but it&apos;ll work for now.</p>
 <h2 id="final-touch">Final touch</h2>
 <p>As a final touch, let&apos;s preview the color generated by the sliders in the Node UI. This can be done with <code>INodeViewCustomization</code> as it gives us access to the Dynamo <code>NodeView</code>, the class that defines the nodes default appearance.</p>
 <p>In <code>HelloUINodeView.cs</code>, add references to namespaces <code>System.Windows.Media</code> and <code>System.Windows.Shapes</code>. Then, add to <code>CustomizeView</code> method the following event handlers to track when the sliders are moved.</p>
-<pre><code class="lang-c#">      using System.Windows.Media;
-      using System.Windows.Shapes;
+<pre><code class="lang-csharp">      <span class="hljs-keyword">using</span> System.Windows.Media;
+      <span class="hljs-keyword">using</span> System.Windows.Shapes;
 </code></pre>
-<pre><code class="lang-c#">      ui.SliderA.ValueChanged += Slider_ValueChanged;
+<pre><code class="lang-csharp">      ui.SliderA.ValueChanged += Slider_ValueChanged;
       ui.SliderR.ValueChanged += Slider_ValueChanged;
       ui.SliderG.ValueChanged += Slider_ValueChanged;
       ui.SliderB.ValueChanged += Slider_ValueChanged;
 </code></pre>
 <p>and then add the following method:</p>
-<pre><code class="lang-c#">private void Slider_ValueChanged(object sender, System.Windows.RoutedPropertyChangedEventArgs&lt;double&gt; e)
-{
+<pre><code class="lang-csharp"><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">Slider_ValueChanged</span>(<span class="hljs-params"><span class="hljs-keyword">object</span> sender, System.Windows.RoutedPropertyChangedEventArgs&lt;<span class="hljs-keyword">double</span>&gt; e</span>)
+</span>{
 
-  ((Rectangle)_nodeview.grid.FindName(&quot;nodeBackground&quot;)).Fill = new SolidColorBrush(Color.FromArgb(
+  ((Rectangle)_nodeview.grid.FindName(<span class="hljs-string">&quot;nodeBackground&quot;</span>)).Fill = <span class="hljs-keyword">new</span> SolidColorBrush(Color.FromArgb(
                                                 Convert.ToByte(_model.SliderValueA), 
                                                 Convert.ToByte(_model.SliderValueR),
                                                 Convert.ToByte(_model.SliderValueG), 
@@ -584,7 +657,7 @@ namespace DynamoWorkshop.ExplicitNode
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"4.3 - Explicit Node Functions","level":"1.6.3","depth":2,"next":{"title":"4.4 - Publishing to the Package Manager","level":"1.6.4","depth":2,"path":"04-ExplicitNodes/04-PublishNodesToPM.md","ref":"./04-ExplicitNodes/04-PublishNodesToPM.md","articles":[]},"previous":{"title":"4.2 - Explicit Node Interfaces","level":"1.6.2","depth":2,"path":"04-ExplicitNodes/02-Interfaces.md","ref":"./04-ExplicitNodes/02-Interfaces.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Intro.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"04-ExplicitNodes/03-Functions.md","mtime":"2019-02-05T11:34:47.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:04:00.579Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"4.3 - Explicit Node Functions","level":"1.6.3","depth":2,"next":{"title":"4.4 - Publishing to the Package Manager","level":"1.6.4","depth":2,"path":"04-ExplicitNodes/04-PublishNodesToPM.md","ref":"./04-ExplicitNodes/04-PublishNodesToPM.md","articles":[]},"previous":{"title":"4.2 - Explicit Node Interfaces","level":"1.6.2","depth":2,"path":"04-ExplicitNodes/02-Interfaces.md","ref":"./04-ExplicitNodes/02-Interfaces.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"04-ExplicitNodes/03-Functions.md","mtime":"2019-06-16T16:12:47.555Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T06:15:01.624Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -592,6 +665,18 @@ namespace DynamoWorkshop.ExplicitNode
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

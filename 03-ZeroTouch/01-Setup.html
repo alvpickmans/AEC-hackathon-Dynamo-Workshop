@@ -17,6 +17,14 @@
     
             
                 
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
                 
             
@@ -107,7 +115,7 @@
                 <a href="../00-DevelopmentInDynamo/00-Introduction.html">
             
                     
-                    0 - Development in Dynamo
+                    Development in Dynamo
             
                 </a>
             
@@ -138,25 +146,6 @@
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../02-PythonScript/01-DynamoInteraction.html">
-            
-                <a href="../02-PythonScript/01-DynamoInteraction.html">
-            
-                    
-                    2.1 - Interaction with Dynamo
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -328,6 +317,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="../05-Extension/00-Introduction.html">
+            
+                <a href="../05-Extension/00-Introduction.html">
+            
+                    
+                    5 - Extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-Extension/01-ExtensionAnatomy.html">
+            
+                <a href="../05-Extension/01-ExtensionAnatomy.html">
+            
+                    
+                    5.1 - Anatomy of an Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-Extension/02-ExtensionSetup.html">
+            
+                <a href="../05-Extension/02-ExtensionSetup.html">
+            
+                    
+                    5.2 - Extension Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../05-Extension/03-WPF_And_MVVM.html">
+            
+                <a href="../05-Extension/03-WPF_And_MVVM.html">
+            
+                    
+                    5.3 - WPF and MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../05-Extension/04-Events.html">
+            
+                <a href="../05-Extension/04-Events.html">
+            
+                    
+                    5.4 - Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../05-Extension/05-NodeViewCollector.html">
+            
+                <a href="../05-Extension/05-NodeViewCollector.html">
+            
+                    
+                    5.5 - NodeView Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -373,7 +446,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="1---visual-studio-setup">1 - Visual Studio Setup<!-- omit in toc --></h1>
+                                <h1 id="31---visual-studio-setup">3.1 - Visual Studio Setup<!-- omit in toc --></h1>
 <p>We&apos;ll be using Visual Studio 2017 as our IDE to create our custom ZeroTouch nodes for Dynamo.</p>
 <ul>
 <li><a href="#creating-new-project">Creating New Project</a></li>
@@ -386,10 +459,7 @@
 </li>
 <li><a href="#setting-start-action">Setting Start Action</a></li>
 <li><a href="#hello-world">Hello World!</a><ul>
-<li><a href="#debugging">Debugging</a><ul>
-<li><a href="#note">Note</a></li>
-</ul>
-</li>
+<li><a href="#debugging">Debugging</a></li>
 <li><a href="#naming">Naming</a></li>
 </ul>
 </li>
@@ -511,13 +581,13 @@ The commands above point to the current version of Dynamo Sandbox, if you&#x2019
 <p><img src="assets/image_8.png" alt="image alt text"></p>
 <h2 id="hello-world">Hello World!</h2>
 <p>It still looks a bit empty in here, let&#x2019;s add some dummy code so that we can check everything is set up correctly. Add a new class named HelloDynamo.cs, or rename Class1.cs:</p>
-<pre><code class="lang-c#">namespace DynamoWorkshop.ZeroTouch
+<pre><code class="lang-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">DynamoWorkshop.ZeroTouch</span>
 {
-  public static class HelloDynamo
+  <span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">class</span> <span class="hljs-title">HelloDynamo</span>
   {
-    public static string SayHello(string Name)
-    {
-      return &quot;Hello &quot; + Name + &quot;!&quot;;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">string</span> <span class="hljs-title">SayHello</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> Name</span>)
+    </span>{
+      <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;Hello &quot;</span> + Name + <span class="hljs-string">&quot;!&quot;</span>;
     }
   }
 }
@@ -528,7 +598,7 @@ The commands above point to the current version of Dynamo Sandbox, if you&#x2019
 <p>Now, if you put some breakpoints in VS you&#x2019;ll be able to get great insights into what&#x2019;s going on in your code, which will help you fix bugs quicker and improve your dev skills too!</p>
 <p>Since we set up our package as a local package, we can actually see it in the list of installed packages:</p>
 <p><img src="assets/image_10.png" alt="image alt text"></p>
-<h4 id="note">Note</h4>
+<h4 id="note">Note<!-- omit in toc --></h4>
 <blockquote>
 <p>Before going ahead to debug our code, we need to change a VS setting. This is not required by Dynamo, but Revit instead, we&apos;ll do it now for peace of mind.  Go under <em>Tools &gt; Options... &gt; Debugging &gt; General &gt; Check &quot;Use Managed Compatibility Mode&quot;</em>. If Managed Compatibility Mode is unchecked and you try debugging within Revit it will crash during startup.</p>
 </blockquote>
@@ -602,7 +672,7 @@ The commands above point to the current version of Dynamo Sandbox, if you&#x2019
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"next":{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},"previous":{"title":"3 - ZeroTouch Nodes","level":"1.5","depth":1,"path":"03-ZeroTouch/00-Introduction.md","ref":"./03-ZeroTouch/00-Introduction.md","articles":[{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"path":"03-ZeroTouch/01-Setup.md","ref":"./03-ZeroTouch/01-Setup.md","articles":[]},{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","ref":"./03-ZeroTouch/03-DynamoNodeDevelopment.md","articles":[]},{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","ref":"./03-ZeroTouch/04-RevitNodeDevelopment.md","articles":[]},{"title":"3.5 - Conclusions","level":"1.5.5","depth":2,"path":"03-ZeroTouch/05-Conclusion.md","ref":"./03-ZeroTouch/05-Conclusion.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Intro.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/01-Setup.md","mtime":"2019-02-06T23:27:59.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:04:00.579Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"next":{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},"previous":{"title":"3 - ZeroTouch Nodes","level":"1.5","depth":1,"path":"03-ZeroTouch/00-Introduction.md","ref":"./03-ZeroTouch/00-Introduction.md","articles":[{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"path":"03-ZeroTouch/01-Setup.md","ref":"./03-ZeroTouch/01-Setup.md","articles":[]},{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","ref":"./03-ZeroTouch/03-DynamoNodeDevelopment.md","articles":[]},{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","ref":"./03-ZeroTouch/04-RevitNodeDevelopment.md","articles":[]},{"title":"3.5 - Conclusions","level":"1.5.5","depth":2,"path":"03-ZeroTouch/05-Conclusion.md","ref":"./03-ZeroTouch/05-Conclusion.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/01-Setup.md","mtime":"2019-06-16T16:10:20.275Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T06:15:01.624Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -610,6 +680,18 @@ The commands above point to the current version of Dynamo Sandbox, if you&#x2019
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

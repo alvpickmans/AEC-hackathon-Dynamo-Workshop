@@ -1,4 +1,4 @@
-# 1 - Visual Studio Setup<!-- omit in toc --> 
+# 3.1 - Visual Studio Setup<!-- omit in toc --> 
 
 We'll be using Visual Studio 2017 as our IDE to create our custom ZeroTouch nodes for Dynamo.
 
@@ -11,7 +11,6 @@ We'll be using Visual Studio 2017 as our IDE to create our custom ZeroTouch node
 - [Setting Start Action](#setting-start-action)
 - [Hello World!](#hello-world)
   - [Debugging](#debugging)
-    - [Note](#note)
   - [Naming](#naming)
 
 ## Creating New Project
@@ -166,7 +165,7 @@ To tell VS to open Dynamo when debugging, we need to set up the `Start Action` t
 
 It still looks a bit empty in here, let’s add some dummy code so that we can check everything is set up correctly. Add a new class named HelloDynamo.cs, or rename Class1.cs:
 
-```c#
+```csharp
 namespace DynamoWorkshop.ZeroTouch
 {
   public static class HelloDynamo
@@ -190,7 +189,7 @@ Since we set up our package as a local package, we can actually see it in the li
 
 ![image alt text](assets/image_10.png)
 
-#### Note
+#### Note<!-- omit in toc --> 
 >Before going ahead to debug our code, we need to change a VS setting. This is not required by Dynamo, but Revit instead, we'll do it now for peace of mind.  Go under *Tools > Options... > Debugging > General > Check "Use Managed Compatibility Mode"*. If Managed Compatibility Mode is unchecked and you try debugging within Revit it will crash during startup.
 
 ![1505399901208](assets/1505399901208.png)

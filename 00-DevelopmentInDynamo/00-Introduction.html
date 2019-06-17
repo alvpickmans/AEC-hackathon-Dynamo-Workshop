@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>0 - Development in Dynamo · GitBook</title>
+        <title>Development in Dynamo · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="../gitbook/style.css">
 
     
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
             
                 
                 <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
@@ -107,7 +115,7 @@
                 <a href="00-Introduction.html">
             
                     
-                    0 - Development in Dynamo
+                    Development in Dynamo
             
                 </a>
             
@@ -138,25 +146,6 @@
                 </a>
             
 
-            
-            <ul class="articles">
-                
-    
-        <li class="chapter " data-level="1.4.1" data-path="../02-PythonScript/01-DynamoInteraction.html">
-            
-                <a href="../02-PythonScript/01-DynamoInteraction.html">
-            
-                    
-                    2.1 - Interaction with Dynamo
-            
-                </a>
-            
-
-            
-        </li>
-    
-
-            </ul>
             
         </li>
     
@@ -328,6 +317,90 @@
             
         </li>
     
+        <li class="chapter " data-level="1.7" data-path="../05-Extension/00-Introduction.html">
+            
+                <a href="../05-Extension/00-Introduction.html">
+            
+                    
+                    5 - Extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../05-Extension/01-ExtensionAnatomy.html">
+            
+                <a href="../05-Extension/01-ExtensionAnatomy.html">
+            
+                    
+                    5.1 - Anatomy of an Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../05-Extension/02-ExtensionSetup.html">
+            
+                <a href="../05-Extension/02-ExtensionSetup.html">
+            
+                    
+                    5.2 - Extension Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../05-Extension/03-WPF_And_MVVM.html">
+            
+                <a href="../05-Extension/03-WPF_And_MVVM.html">
+            
+                    
+                    5.3 - WPF and MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../05-Extension/04-Events.html">
+            
+                <a href="../05-Extension/04-Events.html">
+            
+                    
+                    5.4 - Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="../05-Extension/05-NodeViewCollector.html">
+            
+                <a href="../05-Extension/05-NodeViewCollector.html">
+            
+                    
+                    5.5 - NodeView Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
 
     
 
@@ -358,7 +431,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href=".." >0 - Development in Dynamo</a>
+        <a href=".." >Development in Dynamo</a>
     </h1>
 </div>
 
@@ -374,12 +447,13 @@
                                 <section class="normal markdown-section">
                                 
                                 <h2 id="development-in-dynamo">Development in Dynamo</h2>
-<p>In Dynamo it is possible to add custom functionalities using special components, these are called custom nodes. They can be really useful for frequently used routines or for adding completely new and advanced features.</p>
+<p><img src="assets/extendingDynamo.png" alt="Extending Dynamo"></p>
+<p>Dynamo is one of the tools on the AEC that has gained attraction in a very short time for multiple reasons, like its open-source nature, easy to use and its ability to enhance Revit functionality.</p>
+<p>Apart from the general <em>out of the box</em> use, Dynamo allows us to extend and improve existing functionality, or even add our own custom tools. This can be done through different methods, varying in difficulty.  </p>
 <h3 id="advantages">Advantages</h3>
 <ul>
 <li>Simplify the graph, keep it clean and intuitive</li>
 <li>Reusability</li>
-<li>Modularity, update all custom nodes of the same type at once</li>
 <li>Better use of conditional statements (if/then) and looping</li>
 <li>Add brand new functionalities</li>
 <li>Integrate with external services/libraries</li>
@@ -390,10 +464,10 @@
 <ul>
 <li>Less intuitive than visual programming</li>
 <li>Hard for novice users/learning curve</li>
-<li>Some custom nodes require compiling DLLs</li>
-<li>With great power comes great responsibility, custom nodes are more prone to bugs, memory abuse or crashes</li>
+<li>Might require the use of and IDE (Integrated Development Environment).</li>
+<li>With great power comes great responsibility, custom development is more prone to bugs, memory abuse or crashes</li>
 </ul>
-<h3 id="types-of-custom-nodes">Types of custom nodes</h3>
+<h3 id="developing-custom-nodes">Developing Custom Nodes</h3>
 <p>There are different types of custom nodes, for all levels and uses:</p>
 <p><img src="assets/Node%20types%20image.png" alt="Dynamo custom nodes" title="Part 0 - Custom nodes"></p>
 <ul>
@@ -410,10 +484,9 @@
 </ul>
 <h3 id="other-types-of-development">Other types of development</h3>
 <p>Around January 2018, the Dynamo team released a new approach of developing in Dynamo, slightly different than creating your own nodes.</p>
-<p><strong>Extensions</strong> and <strong>ViewExtensions</strong> allow the developer to <em>&quot;tap&quot;</em> into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top od Dynamo. </p>
-<p>For more info, visit the <a href="https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/" target="_blank">blog post</a> or watch the <a href="https://www.youtube.com/watch?v=qLGsRcIOwzc&amp;feature=youtu.be" target="_blank">recording</a> from the workshop held in London on February 2018.</p>
-<h2 id="acknowledgment">Acknowledgment</h2>
-<p>Big part of this material is based and reused from the <a href="https://github.com/radumg/AEC-hackathon-Dynamo-Workshop" target="_blank">AEC Hackathon Dynamo Workshop</a>, which in turn is an extended version from the original <a href="https://github.com/teocomi/dug-dynamo-unchained" target="_blank">Dynamo User Group Computational Design Workshop</a>.</p>
+<p><strong>Extensions</strong> and <strong>ViewExtensions</strong> allow the developer to <em>&quot;tap&quot;</em> into Dynamo itself and make use of its API to drive custom functionality, respond to events and add your own UI on top of Dynamo. </p>
+<p>On this material we will explore what Extensions/ViewExtensions are and write some examples of our own.</p>
+<p>For more information, visit the <a href="https://dynamobim.org/extending-dynamo-a-london-workshop-on-extensions/" target="_blank">blog post</a> or watch the <a href="https://www.youtube.com/watch?v=qLGsRcIOwzc&amp;feature=youtu.be" target="_blank">recording</a> from the workshop held in London on February 2018.</p>
 
                                 
                                 </section>
@@ -457,7 +530,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"0 - Development in Dynamo","level":"1.2","depth":1,"next":{"title":"1 - Custom Nested Nodes","level":"1.3","depth":1,"path":"01-CustomNodes/00-Introduction.md","ref":"./01-CustomNodes/00-Introduction.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"Intro.md","ref":"Intro.md","articles":[]},"dir":"ltr"},"config":{"plugins":[],"root":"./docs","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"Intro.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"00-DevelopmentInDynamo/00-Introduction.md","mtime":"2019-04-03T21:20:16.499Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-04-03T22:04:00.579Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Development in Dynamo","level":"1.2","depth":1,"next":{"title":"1 - Custom Nested Nodes","level":"1.3","depth":1,"path":"01-CustomNodes/00-Introduction.md","ref":"./01-CustomNodes/00-Introduction.md","articles":[]},"previous":{"title":"Introduction","level":"1.1","depth":1,"path":"README.md","ref":"README.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"00-DevelopmentInDynamo/00-Introduction.md","mtime":"2019-06-17T06:14:33.359Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T06:15:01.624Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
@@ -465,6 +538,18 @@
         
     <script src="../gitbook/gitbook.js"></script>
     <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
     
         
         <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>

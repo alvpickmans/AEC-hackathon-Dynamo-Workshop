@@ -1,4 +1,4 @@
-# 1 - Getting started with WPF<!-- omit in toc --> 
+# 4.1 - Getting started with WPF<!-- omit in toc --> 
 
 In order to customize a nodes UI, and to affect the its state and the graph an explicit custom node is needed. Explicit custom nodes are more complex and use Windows Presentation Foundation (WPF) a powerful UI framework for building Windows applications.
 
@@ -44,7 +44,7 @@ As you see VS has automatically created XAML tags corresponding to these UI elem
 
 Now in the code behind (MainWindow.cs) we can add the following function that will show up a 'MessageBox' with the slider value when the button is clicked:
 
-```c#
+```csharp
 private void Button_Click(object sender, RoutedEventArgs e)
 {
   MessageBox.Show("Value is " + ValueSlider.Value);
