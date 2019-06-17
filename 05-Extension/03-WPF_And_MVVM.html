@@ -1,0 +1,609 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>5.3 - WPF and MVVM · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="04-Events.html" />
+    
+    
+    <link rel="prev" href="02-ExtensionSetup.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                <a href="../00-DevelopmentInDynamo/00-Introduction.html">
+            
+                    
+                    Development in Dynamo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../01-CustomNodes/00-Introduction.html">
+            
+                <a href="../01-CustomNodes/00-Introduction.html">
+            
+                    
+                    1 - Custom Nested Nodes
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../02-PythonScript/00-Introduction.html">
+            
+                <a href="../02-PythonScript/00-Introduction.html">
+            
+                    
+                    2 - Python Scripts
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../03-ZeroTouch/00-Introduction.html">
+            
+                <a href="../03-ZeroTouch/00-Introduction.html">
+            
+                    
+                    3 - ZeroTouch Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../03-ZeroTouch/01-Setup.html">
+            
+                <a href="../03-ZeroTouch/01-Setup.html">
+            
+                    
+                    3.1 - Visual Studio Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                <a href="../03-ZeroTouch/02-ZeroTouchMapping.html">
+            
+                    
+                    3.2 - Zero Touch Mapping
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/03-DynamoNodeDevelopment.html">
+            
+                    
+                    3.3 - Dynamo Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                <a href="../03-ZeroTouch/04-RevitNodeDevelopment.html">
+            
+                    
+                    3.4 - Revit Node Development
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.5" data-path="../03-ZeroTouch/05-Conclusion.html">
+            
+                <a href="../03-ZeroTouch/05-Conclusion.html">
+            
+                    
+                    3.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../04-ExplicitNodes/00-Introduction.html">
+            
+                <a href="../04-ExplicitNodes/00-Introduction.html">
+            
+                    
+                    4 - Explicit Nodes
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                <a href="../04-ExplicitNodes/01-GettingStartedWithWPF.html">
+            
+                    
+                    4.1 - Getting started with WPF
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../04-ExplicitNodes/02-Interfaces.html">
+            
+                <a href="../04-ExplicitNodes/02-Interfaces.html">
+            
+                    
+                    4.2 - Explicit Node Interfaces
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../04-ExplicitNodes/03-Functions.html">
+            
+                <a href="../04-ExplicitNodes/03-Functions.html">
+            
+                    
+                    4.3 - Explicit Node Functions
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                <a href="../04-ExplicitNodes/04-PublishNodesToPM.html">
+            
+                    
+                    4.4 - Publishing to the Package Manager
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../04-ExplicitNodes/05-Conclusion.html">
+            
+                <a href="../04-ExplicitNodes/05-Conclusion.html">
+            
+                    
+                    4.5 - Conclusions
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="00-Introduction.html">
+            
+                <a href="00-Introduction.html">
+            
+                    
+                    5 - Extensions
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="01-ExtensionAnatomy.html">
+            
+                <a href="01-ExtensionAnatomy.html">
+            
+                    
+                    5.1 - Anatomy of an Extension
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="02-ExtensionSetup.html">
+            
+                <a href="02-ExtensionSetup.html">
+            
+                    
+                    5.2 - Extension Setup
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.7.3" data-path="03-WPF_And_MVVM.html">
+            
+                <a href="03-WPF_And_MVVM.html">
+            
+                    
+                    5.3 - WPF and MVVM
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="04-Events.html">
+            
+                <a href="04-Events.html">
+            
+                    
+                    5.4 - Events
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.5" data-path="05-NodeViewCollector.html">
+            
+                <a href="05-NodeViewCollector.html">
+            
+                    
+                    5.5 - NodeView Collector
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >5.3 - WPF and MVVM</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="53---wpf-and-mvvm-">5.3 - WPF and MVVM <!-- omit in toc --></h1>
+<p>One of the most powerful reasons to wanting to create your own Extension/ViewExtension is to be able to add custom User Interfaces or UI on top of Dynamo. On this chapter we will briefly explain the <strong>Model-View-ViewModel</strong> UI design pattern and create an example of a WPF app.</p>
+<ul>
+<li><a href="#mvvm">MVVM</a><ul>
+<li><a href="#model">Model</a></li>
+<li><a href="#view">View</a></li>
+<li><a href="#view-model">View Model</a></li>
+</ul>
+</li>
+<li><a href="#dynamo-as-mvvm">Dynamo as MVVM</a></li>
+<li><a href="#inotifypropertychanged-and-notificationobject">INotifyPropertyChanged and NotificationObject</a></li>
+<li><a href="#getting-started-with-wpf">Getting Started with WPF</a></li>
+</ul>
+<h2 id="mvvm">MVVM</h2>
+<p>The Model-View-View-Model design pattern is similar to the well known MVC pattern in that the M (Model) and V (View) are relatively the same. The only difference resides between the C (Controller) and the VM (View Model).</p>
+<p><img src="assets/03-MVVM.png" alt="MVVM"></p>
+<h3 id="model">Model</h3>
+<p>Represents the Data + State + Business logic. It is not tied to the view nor to the controller, which makes it reusable in many contexts.</p>
+<h3 id="view">View</h3>
+<p>Binds to observable variables and actions exposed by the View Model. It is possible for multiple views to bind to a single View Model.</p>
+<h3 id="view-model">View Model</h3>
+<p>Responsible for wrapping the model and preparing observable data needed by the view. It also provides hooks for the view to pass events to the model. An important thing to keep in mind is that the View Model is not tied to the view.</p>
+<h2 id="dynamo-as-mvvm">Dynamo as MVVM</h2>
+<p>MVVM is a very common and widely use pattern across the UI development world, with similar variants on different platforms like MVC on web development. Dynamo itself makes use of this pattern internally.
+<img src="assets/03-DynamoAsMVVM.png" alt="Dynamo as MVVM"></p>
+<h2 id="inotifypropertychanged-and-notificationobject">INotifyPropertyChanged and NotificationObject</h2>
+<p>The single most important element on WPF and MVVM development on .Net is the <code>INotifyPropertyChanged</code> interface. This interface is in charge of communicating between the <strong>VieModel</strong> and <strong>View</strong>, letting them know when something has change so they can be updated accordingly.</p>
+<p>A minimum viable implementation of the <code>INotifyPropertyChanged</code> is shown below.</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">MyViewModel</span> : <span class="hljs-title">INotifyPropertyChanged</span>
+{
+
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">region</span> PropertyChanged implementation</span>
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> PropertyChangedEventHandler PropertyChanged;
+    <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">OnPropertyChanged</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> propertyName</span>)
+    </span>{
+        PropertyChangedEventHandler handler = PropertyChanged;
+        <span class="hljs-keyword">if</span> (handler != <span class="hljs-keyword">null</span>) handler(<span class="hljs-keyword">this</span>, <span class="hljs-keyword">new</span> PropertyChangedEventArgs(propertyName));
+    }
+    <span class="hljs-meta">#<span class="hljs-meta-keyword">endregion</span></span>
+
+    <span class="hljs-comment">// props</span>
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">string</span> name;
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Name
+    {
+        <span class="hljs-keyword">get</span> { <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name; }
+        <span class="hljs-keyword">set</span> 
+        { 
+            <span class="hljs-keyword">this</span>.name = <span class="hljs-keyword">value</span>;
+            OnPropertyChanged(nameof(Name));
+        }
+    }
+}
+</code></pre>
+<p>Dynamo provides an <strong>abstract</strong> class the encapsulates this logic called <code>NotificationObject</code>. By inheriting your <code>ViewModels</code>  classes from this abstract class, you make sure to have the notification logic implemented.</p>
+<pre><code class="lang-csharp"><span class="hljs-keyword">namespace</span> <span class="hljs-title">Dynamo.Core</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">abstract</span> <span class="hljs-keyword">class</span> <span class="hljs-title">NotificationObject</span> : <span class="hljs-title">INotifyPropertyChanged</span>
+    {
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-title">NotificationObject</span>(<span class="hljs-params"></span>)</span>;
+
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">event</span> PropertyChangedEventHandler PropertyChanged;
+
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">virtual</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RaisePropertyChanged</span>(<span class="hljs-params"><span class="hljs-keyword">string</span> propertyName</span>)</span>;
+        <span class="hljs-function"><span class="hljs-keyword">protected</span> <span class="hljs-keyword">void</span> <span class="hljs-title">RaisePropertyChanged</span>(<span class="hljs-params"><span class="hljs-keyword">params</span> <span class="hljs-keyword">string</span>[] propertyNames</span>)</span>;
+    }
+}
+</code></pre>
+<h2 id="getting-started-with-wpf">Getting Started with WPF</h2>
+<p>Now we will jump to the <a href="../04-ExplicitNodes/01-GettingStartedWithWPF.html">Getting Started with WPF</a> to learn the basics of Windows Presentation Foundation.</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="02-ExtensionSetup.html" class="navigation navigation-prev " aria-label="Previous page: 5.2 - Extension Setup">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="04-Events.html" class="navigation navigation-next " aria-label="Next page: 5.4 - Events">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"5.3 - WPF and MVVM","level":"1.7.3","depth":2,"next":{"title":"5.4 - Events","level":"1.7.4","depth":2,"path":"05-Extension/04-Events.md","ref":"./05-Extension/04-Events.md","articles":[]},"previous":{"title":"5.2 - Extension Setup","level":"1.7.2","depth":2,"path":"05-Extension/02-ExtensionSetup.md","ref":"./05-Extension/02-ExtensionSetup.md","articles":[]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"05-Extension/03-WPF_And_MVVM.md","mtime":"2019-06-17T06:14:33.375Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T06:15:01.624Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-collapsible-chapters/collapsible-chapters.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
