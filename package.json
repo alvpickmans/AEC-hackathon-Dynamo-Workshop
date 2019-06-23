@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gitbook install && gitbook serve",
-    "build": "gitbook install && gitbook build . ./docs",
-    "publish": "./publish-gitbook.sh"
+    "build": "gitbook install && gitbook build . ./docs"
   },
   "repository": {
     "type": "git",
