@@ -2,16 +2,16 @@
 
 We'll be using Visual Studio 2017 as our IDE to create our custom ZeroTouch nodes for Dynamo.
 
-- [Creating New Project](#creating-new-project)
-- [Dynamo References](#dynamo-references)
-- [Creating a Package](#creating-a-package)
-- [Deploying to Dynamo Packages Folder](#deploying-to-dynamo-packages-folder)
-    - [Built Events](#built-events)
-    - [Csproject `AfterBuild` Targets](#csproject-afterbuild-targets)
-- [Setting Start Action](#setting-start-action)
-- [Hello World!](#hello-world)
-  - [Debugging](#debugging)
-  - [Naming](#naming)
+- [Creating New Project](#Creating-New-Project)
+- [Dynamo References](#Dynamo-References)
+- [Creating a Package](#Creating-a-Package)
+- [Deploying to Dynamo Packages Folder](#Deploying-to-Dynamo-Packages-Folder)
+    - [Built Events](#Built-Events)
+    - [Csproject `AfterBuild` Targets](#Csproject-AfterBuild-Targets)
+- [Setting Start Action](#Setting-Start-Action)
+- [Hello World!](#Hello-World)
+  - [Debugging](#Debugging)
+  - [Naming](#Naming)
 
 ## Creating New Project
 
@@ -127,7 +127,7 @@ Modifying hte `.csproject` XML file, we can add a set of actions to be performed
       <Pdbs Include="$(OutDir)*.pdb" />
       <Xmls Include="$(OutDir)*.xml" />
       <Configs Include="$(OutDir)*.config" />
-      <PkgJson Include="$(ProjectDir)*pkg.json" />
+      <PkgJson Include="$(ProjectDir)manifest/*pkg.json" />
       <SourcePackage Include="$(SolutionDir)dist\$(PackageName)\**\*" />
     </ItemGroup>
     <PropertyGroup>
@@ -138,7 +138,7 @@ Modifying hte `.csproject` XML file, we can add a set of actions to be performed
     <Copy SourceFiles="@(Pdbs)" DestinationFolder="$(SolutionDir)dist\$(PackageName)\bin\" />
     <Copy SourceFiles="@(Xmls)" DestinationFolder="$(SolutionDir)dist\$(PackageName)\bin\" />
     <Copy SourceFiles="@(Configs)" DestinationFolder="$(SolutionDir)dist\$(PackageName)\bin\" />
-    <Copy SourceFiles="@(PkgJson)" DestinationFolder="$(SolutionDir)dist\MyDynamoPackage\bin\" />
+    <Copy SourceFiles="@(PkgJson)" DestinationFolder="$(SolutionDir)dist\$(PackageName)" />
     <MakeDir Directories="$(SolutionDir)dist\$(PackageName)\dyf" />
     <MakeDir Directories="$(SolutionDir)dist\$(PackageName)\extra" />
 

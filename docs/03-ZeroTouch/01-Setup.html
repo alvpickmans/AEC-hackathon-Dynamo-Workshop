@@ -449,18 +449,18 @@
                                 <h1 id="31---visual-studio-setup">3.1 - Visual Studio Setup<!-- omit in toc --></h1>
 <p>We&apos;ll be using Visual Studio 2017 as our IDE to create our custom ZeroTouch nodes for Dynamo.</p>
 <ul>
-<li><a href="#creating-new-project">Creating New Project</a></li>
-<li><a href="#dynamo-references">Dynamo References</a></li>
-<li><a href="#creating-a-package">Creating a Package</a></li>
-<li><a href="#deploying-to-dynamo-packages-folder">Deploying to Dynamo Packages Folder</a><ul>
-<li><a href="#built-events">Built Events</a></li>
-<li><a href="#csproject-afterbuild-targets">Csproject <code>AfterBuild</code> Targets</a></li>
+<li><a href="#Creating-New-Project">Creating New Project</a></li>
+<li><a href="#Dynamo-References">Dynamo References</a></li>
+<li><a href="#Creating-a-Package">Creating a Package</a></li>
+<li><a href="#Deploying-to-Dynamo-Packages-Folder">Deploying to Dynamo Packages Folder</a><ul>
+<li><a href="#Built-Events">Built Events</a></li>
+<li><a href="#Csproject-AfterBuild-Targets">Csproject <code>AfterBuild</code> Targets</a></li>
 </ul>
 </li>
-<li><a href="#setting-start-action">Setting Start Action</a></li>
-<li><a href="#hello-world">Hello World!</a><ul>
-<li><a href="#debugging">Debugging</a></li>
-<li><a href="#naming">Naming</a></li>
+<li><a href="#Setting-Start-Action">Setting Start Action</a></li>
+<li><a href="#Hello-World">Hello World!</a><ul>
+<li><a href="#Debugging">Debugging</a></li>
+<li><a href="#Naming">Naming</a></li>
 </ul>
 </li>
 </ul>
@@ -551,7 +551,7 @@ xcopy /Y &quot;$(ProjectDir)pkg.json&quot; &quot;$(AppData)\Dynamo\Dynamo Core\2
       <span class="hljs-tag">&lt;<span class="hljs-name">Pdbs</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(OutDir)*.pdb&quot;</span> /&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">Xmls</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(OutDir)*.xml&quot;</span> /&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">Configs</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(OutDir)*.config&quot;</span> /&gt;</span>
-      <span class="hljs-tag">&lt;<span class="hljs-name">PkgJson</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(ProjectDir)*pkg.json&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">PkgJson</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(ProjectDir)manifest/*pkg.json&quot;</span> /&gt;</span>
       <span class="hljs-tag">&lt;<span class="hljs-name">SourcePackage</span> <span class="hljs-attr">Include</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\**\*&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-name">ItemGroup</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">PropertyGroup</span>&gt;</span>
@@ -562,7 +562,7 @@ xcopy /Y &quot;$(ProjectDir)pkg.json&quot; &quot;$(AppData)\Dynamo\Dynamo Core\2
     <span class="hljs-tag">&lt;<span class="hljs-name">Copy</span> <span class="hljs-attr">SourceFiles</span>=<span class="hljs-string">&quot;@(Pdbs)&quot;</span> <span class="hljs-attr">DestinationFolder</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\bin\&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Copy</span> <span class="hljs-attr">SourceFiles</span>=<span class="hljs-string">&quot;@(Xmls)&quot;</span> <span class="hljs-attr">DestinationFolder</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\bin\&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">Copy</span> <span class="hljs-attr">SourceFiles</span>=<span class="hljs-string">&quot;@(Configs)&quot;</span> <span class="hljs-attr">DestinationFolder</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\bin\&quot;</span> /&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">Copy</span> <span class="hljs-attr">SourceFiles</span>=<span class="hljs-string">&quot;@(PkgJson)&quot;</span> <span class="hljs-attr">DestinationFolder</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\MyDynamoPackage\bin\&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Copy</span> <span class="hljs-attr">SourceFiles</span>=<span class="hljs-string">&quot;@(PkgJson)&quot;</span> <span class="hljs-attr">DestinationFolder</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">MakeDir</span> <span class="hljs-attr">Directories</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\dyf&quot;</span> /&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">MakeDir</span> <span class="hljs-attr">Directories</span>=<span class="hljs-string">&quot;$(SolutionDir)dist\$(PackageName)\extra&quot;</span> /&gt;</span>
 
@@ -672,7 +672,7 @@ The commands above point to the current version of Dynamo Sandbox, if you&#x2019
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"next":{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},"previous":{"title":"3 - ZeroTouch Nodes","level":"1.5","depth":1,"path":"03-ZeroTouch/00-Introduction.md","ref":"./03-ZeroTouch/00-Introduction.md","articles":[{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"path":"03-ZeroTouch/01-Setup.md","ref":"./03-ZeroTouch/01-Setup.md","articles":[]},{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","ref":"./03-ZeroTouch/03-DynamoNodeDevelopment.md","articles":[]},{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","ref":"./03-ZeroTouch/04-RevitNodeDevelopment.md","articles":[]},{"title":"3.5 - Conclusions","level":"1.5.5","depth":2,"path":"03-ZeroTouch/05-Conclusion.md","ref":"./03-ZeroTouch/05-Conclusion.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/01-Setup.md","mtime":"2019-06-17T06:39:06.054Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-17T06:51:37.110Z"},"basePath":"..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"next":{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},"previous":{"title":"3 - ZeroTouch Nodes","level":"1.5","depth":1,"path":"03-ZeroTouch/00-Introduction.md","ref":"./03-ZeroTouch/00-Introduction.md","articles":[{"title":"3.1 - Visual Studio Setup","level":"1.5.1","depth":2,"path":"03-ZeroTouch/01-Setup.md","ref":"./03-ZeroTouch/01-Setup.md","articles":[]},{"title":"3.2 - Zero Touch Mapping","level":"1.5.2","depth":2,"path":"03-ZeroTouch/02-ZeroTouchMapping.md","ref":"./03-ZeroTouch/02-ZeroTouchMapping.md","articles":[]},{"title":"3.3 - Dynamo Node Development","level":"1.5.3","depth":2,"path":"03-ZeroTouch/03-DynamoNodeDevelopment.md","ref":"./03-ZeroTouch/03-DynamoNodeDevelopment.md","articles":[]},{"title":"3.4 - Revit Node Development","level":"1.5.4","depth":2,"path":"03-ZeroTouch/04-RevitNodeDevelopment.md","ref":"./03-ZeroTouch/04-RevitNodeDevelopment.md","articles":[]},{"title":"3.5 - Conclusions","level":"1.5.5","depth":2,"path":"03-ZeroTouch/05-Conclusion.md","ref":"./03-ZeroTouch/05-Conclusion.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["code","collapsible-chapters","github"],"root":"./","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"github":{"url":"https://github.com/alvpickmans/DynamoDevelopment-London-Hackathon-2019"},"search":{},"collapsible-chapters":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"Summary.md"},"variables":{},"gitbook":"*"},"file":{"path":"03-ZeroTouch/01-Setup.md","mtime":"2019-06-23T11:05:51.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-23T11:07:37.990Z"},"basePath":"..","book":{"language":""}});
         });
     </script>
 </div>
