@@ -64,6 +64,6 @@ Go to the [project's repository](https://github.com/alvpickmans/Dynamo-Dev-Start
 
 ## Acknowledgment
 
-Big part of this material is based and reused from the [AEC Hackathon Dynamo Workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop), which in turn is an extended version from the original [Dynamo User Group Computational Design Workshop](https://github.com/teocomi/dug-dynamo-unchained).
+Big part of this material is based and reused from the [AEC Hackathon Dynamo Workshop](https://github.com/radumg/AEC-hackathon-Dynamo-Workshop), which in turn is an extended version from [@teocomis's](https://github.com/teocomi) original [Dynamo User Group Computational Design Workshop](https://github.com/teocomi/dug-dynamo-unchained).
 
-It also recaps some of the contents taught during the [Dynamo Developer Workshop](https://github.com/DynamoDS/DeveloperWorkshop) on AU Las Vegas 2019.
+It also recaps some of the contents taught during the [Dynamo Developer Workshop](https://github.com/DynamoDS/DeveloperWorkshop) on AU Las Vegas 2018.
